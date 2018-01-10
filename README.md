@@ -5,9 +5,9 @@
 1. create db in your MySql
 
 ```sql
-CREATE DATABASE As_order 
-    DEFAULT CHARACTER SET utf8mb4 
-    COLLATE utf8mb4_general_ci;
+DROP DATABASE mst_order;
+CREATE DATABASE mst_order DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE mst_order;
 ```
 
 ## Tables Design
