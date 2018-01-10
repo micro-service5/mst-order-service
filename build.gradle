@@ -71,7 +71,7 @@ dependencies {
     testCompile("org.springframework.cloud:spring-cloud-contract-stub-runner:1.2.1.RELEASE")
     testCompile("org.springframework.cloud:spring-cloud-starter-contract-stub-runner:1.2.1.RELEASE")
     testCompile("org.springframework.cloud:spring-cloud-contract-spec:1.2.1.RELEASE")
-
+    testCompile('io.rest-assured:spring-mock-mvc:3.0.0')
 }
 
 contracts {
