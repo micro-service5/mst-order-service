@@ -3,11 +3,9 @@ package com.thoughtworks.mstorderservice.controller;
 import com.thoughtworks.mstorderservice.dto.ShoppingCartItemDto;
 import com.thoughtworks.mstorderservice.entity.ShoppingCartItem;
 import com.thoughtworks.mstorderservice.service.ShoppingCartService;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @RestController

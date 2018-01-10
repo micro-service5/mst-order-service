@@ -1,20 +1,22 @@
 package com.thoughtworks.mstorderservice.dto;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thoughtworks.mstorderservice.entity.ShoppingCartItem;
+import com.thoughtworks.mstorderservice.util.EntityMapper;
 import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class ShoppingCartItemDto {
     private Long userId;
     private Long goodsId;
     private Long count;
 
     public static ShoppingCartItemDto from(ShoppingCartItem shoppingCartItem) {
-        return new ObjectMapper().convertValue(shoppingCartItem, ShoppingCartItemDto.class);
+        ShoppingCartItemDto shoppingCartItemDto = EntityMapper.map(shoppingCartItem, ShoppingCartItemDto.class);
+        shoppingCartItemDto.setCount(shoppingCartItem.getGoodsCount());
+        return shoppingCartItemDto;
     }
 }
