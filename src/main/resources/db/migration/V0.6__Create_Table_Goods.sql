@@ -1,8 +1,8 @@
 CREATE TABLE `goods` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(255) NOT NULL,
-  `Price` BIGINT(20) NOT NULL,
-  `stockCount` BIGINT(20) NOT NULL,
-  `Description` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `price` BIGINT(20) NOT NULL,
+  `stock_count` BIGINT(20) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
