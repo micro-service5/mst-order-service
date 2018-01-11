@@ -11,12 +11,12 @@ public class OrderService {
 
     private OrderRepository orderRepository;
 
-    public String hello() {
-        return "hello, i'm order service";
+    OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
     }
 
-    public List<Order> getAllDetail(Long orderId) {
-        return orderRepository.findAllByOrderId(orderId);
+    public List<Order> getAllOrders(Long userId) {
+        return orderRepository.findAllByUserId(userId);
     }
 
 }

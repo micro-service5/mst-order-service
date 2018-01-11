@@ -5,7 +5,11 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method 'GET'
-        url '/shopping-cart'
+        url '/shopping-cart', {
+            queryParameters {
+                parameter userId: 1111
+            }
+        }
     }
     response {
         status 200
@@ -18,16 +22,6 @@ Contract.make {
                         goodsId: 4444,
                         count: 1,
                 ],
-                [
-                        userId: 2222,
-                        goodsId: 5555,
-                        count: 3,
-                ],
-                [
-                        userId: 3333,
-                        goodsId: 6666,
-                        count: 5,
-                ]
         ])
     }
 }

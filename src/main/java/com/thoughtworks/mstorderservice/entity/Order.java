@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order_detail")
+@Table(name = "order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,12 +19,5 @@ public class Order {
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "address")
-    private String goodsId;
-
-    @Column(name = "good_name")
-    private String goodsName;
-
-    @Column(name = "good_price")
-    private Long goodsPrice;
+    private String address;
 }

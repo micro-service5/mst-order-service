@@ -57,6 +57,8 @@ dependencies {
     compile('net.logstash.logback:logstash-logback-encoder:4.9')
     compile('org.modelmapper:modelmapper:0.7.7')
 
+    testRuntime('com.h2database:h2')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
     testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -5,6 +5,7 @@ import com.thoughtworks.mstorderservice.entity.ShoppingCartItem;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ShoppingCartService {
@@ -16,11 +17,20 @@ public class ShoppingCartService {
     }
 
     public List<ShoppingCartItem> getAll(Long userId) {
-        return shoppingCartItemRepository.findAll();
+        if (userId == null) {
+            return shoppingCartItemRepository.findAll();
+        } else {
+            return shoppingCartItemRepository.findAllByUserId(userId);
+        }
     }
 
     public ShoppingCartItem addGoods(ShoppingCartItem shoppingCartItem) {
-        return shoppingCartItemRepository.save(shoppingCartItem);
+        Optional<ShoppingCartItem> oldShoppingCartItem = shoppingCartItemRepository.findOneByUserIdAndGoodsId(
+                shoppingCartItem.getUserId(),
+                shoppingCartItem.getGoodsId());
+        ShoppingCartItem shoppingCartItemToSave = oldShoppingCartItem.orElse(shoppingCartItem);
+        shoppingCartItemToSave.setGoodsCount(shoppingCartItem.getGoodsCount());
+        return shoppingCartItemRepository.save(shoppingCartItemToSave);
     }
 
     public String hello() {

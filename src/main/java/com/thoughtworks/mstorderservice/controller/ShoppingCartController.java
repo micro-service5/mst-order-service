@@ -23,9 +23,8 @@ public class ShoppingCartController {
         return shoppingCartService.hello();
     }
 
-    @GetMapping("/all")
-    public List<ShoppingCartItemDto> getAll(
-            @RequestParam(value = "userId", defaultValue = "1", required = false) Long userId) {
+    @GetMapping
+    public List<ShoppingCartItemDto> getAll(@RequestParam(required = false) Long userId) {
         return shoppingCartService.getAll(userId)
                 .stream()
                 .map(ShoppingCartItemDto::from)
@@ -33,7 +32,16 @@ public class ShoppingCartController {
     }
 
     @PostMapping
-    public void save(@RequestBody ShoppingCartItem shoppingCartItem) {
-        shoppingCartService.addGoods(shoppingCartItem);
+    public ShoppingCartItemDto save(
+            @RequestParam Long userId,
+            @RequestParam Long goodsId,
+            @RequestParam Long goodsCount) {
+        return ShoppingCartItemDto.from(
+                shoppingCartService.addGoods(
+                        ShoppingCartItem.builder()
+                                .userId(userId)
+                                .goodsId(goodsId)
+                                .goodsCount(goodsCount)
+                                .build()));
     }
 }

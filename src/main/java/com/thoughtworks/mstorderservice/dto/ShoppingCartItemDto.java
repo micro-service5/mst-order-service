@@ -19,4 +19,10 @@ public class ShoppingCartItemDto {
         shoppingCartItemDto.setCount(shoppingCartItem.getGoodsCount());
         return shoppingCartItemDto;
     }
+
+    public ShoppingCartItem toEntity() {
+        ShoppingCartItem shoppingCartItem = EntityMapper.map(this, ShoppingCartItem.class);
+        shoppingCartItem.setGoodsCount(this.getCount());
+        return shoppingCartItem;
+    }
 }
