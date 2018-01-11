@@ -15,13 +15,13 @@ USE mst_order;
 ```
 shopping_cart_item
     - <id>
-    - userId ----------------->
-    - goodsId -----------------+----->
+    - userId
+    - goodsId -----------------+
     - goodsCount                \
                                 |
 order:                          |
     - <id>                      |
-    - userId -----------------> |
+    - userId                    |
     - address                   |
     - status                    |
     - [goods] <--------------+  |
@@ -30,17 +30,18 @@ goods:                       |  |
     - <id>                   |  |
     - orderId ---------------+  |
     - goodsId <-----------------+
-    - goodsName
-    - goodsPrice
+    - name
+    - price
+    - count
+    - description
 ```
 
 ## Moco Server
 
-因为 goods service 不在线, 需要一个 mock server, 这里用了 moco.
+因为 Goods Service 不在线, 需要一个 mock server, 这里用了 moco.
 
-首先下载 [Standalone Moco Runner .jar 文件](http://central.maven.org/maven2/com/github/dreamhead/moco-runner/0.12.0/moco-runner-0.12.0-standalone.jar).
-
-运行:
+首先下载 [Standalone Moco Runner .jar 文件](http://central.maven.org/maven2/com/github/dreamhead/moco-runner/0.12.0/moco-runner-0.12.0-standalone.jar),
+放到代码根目录, 然后运行:
 
 ```shell
 java -jar moco-runner-*-standalone.jar http -p 12306 -c moco-goods-stub.json
