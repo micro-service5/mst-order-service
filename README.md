@@ -10,6 +10,20 @@ CREATE DATABASE mst_order DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_
 USE mst_order;
 ```
 
+2. run
+
+```shell
+# a) bootRun
+$ ./gradlew bootRun
+
+# b) build & run app.jar
+$ ./gradlew shadowJar
+$ java -jar build/libs/mst-order-service-*.jar
+
+# c) IntelliJ IDEA
+# (^M): MstOrderServiceApplication
+```
+
 ## Tables Design
 
 ```

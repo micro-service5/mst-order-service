@@ -7,5 +7,6 @@ CREATE TABLE `goods` (
   `count` BIGINT(20) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_unique_order_id_goods_id` (`order_id`,`goods_id`),
   CONSTRAINT `goods_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE
 );
