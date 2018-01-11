@@ -1,12 +1,12 @@
 package com.thoughtworks.mstorderservice.data;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class GoodsData {
     private Long id;
     private String name;

@@ -1,5 +1,6 @@
 package com.thoughtworks.mstorderservice.controller;
 
+import com.thoughtworks.mstorderservice.data.GoodsData;
 import com.thoughtworks.mstorderservice.dto.ShoppingCartItemDto;
 import com.thoughtworks.mstorderservice.entity.ShoppingCartItem;
 import com.thoughtworks.mstorderservice.service.ShoppingCartService;
@@ -16,11 +17,6 @@ public class ShoppingCartController {
 
     ShoppingCartController(ShoppingCartService shoppingCartService) {
         this.shoppingCartService = shoppingCartService;
-    }
-
-    @GetMapping("/index")
-    public String hello() {
-        return shoppingCartService.hello();
     }
 
     @GetMapping

@@ -1,0 +1,44 @@
+[
+  {
+    "request" : { "uri" : "/goods/1/buy/1", "method" : "post" },
+    "response" : { "text": "okay" }
+  },
+  {
+    "request" : { "uri" : "/goods/1" },
+    "response" : { "json": {
+      "id": 1,
+      "name": "DUEPLAY UGG 兔子耳",
+      "description": "绒毛兔耳朵设计，俏皮之余显洋气。加厚棉映衬，打造极佳保暖性。舒适平底设计，轻松出行倍减压。",
+      "price": 840.0,
+      "stockCount": 123
+    }}
+  },
+  {
+    "request" : { "uri" : "/goods/2/buy/2", "method" : "post" },
+    "response" : { "text": "okay" }
+  },
+  {
+    "request" : { "uri" : "/goods/2" },
+    "response" : { "json": {
+      "id": 2,
+      "name": "树夏半高领镂空毛衣",
+      "description": "优质针织面料针法细密，彰显优越品质。镂空提花勾勒，性感之余更添诱人气息。拼接收束袖口，凸显视觉立体层次美。",
+      "price": 259.0,
+      "stockCount": 456
+    }}
+  },
+  {
+    "request" : { "uri" : "/goods/3/buy/3", "method" : "post" },
+    "response" : { "text": "okay" }
+  },
+  {
+    "request" : { "uri" : "/goods/3" },
+    "response" : { "json": {
+      "id": 3,
+      "name": "KENZO 双面印花防风衣",
+      "description": "双面设计让你一件衣服有多种穿法。 不规则印花碰撞简约 LOGO，打造街头时尚。 宽松防风衣版型，将运动融于时尚。",
+      "price": 3550.0,
+      "stockCount": 5
+    }}
+  }
+]

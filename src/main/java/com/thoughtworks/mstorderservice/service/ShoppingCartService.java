@@ -32,8 +32,4 @@ public class ShoppingCartService {
         shoppingCartItemToSave.setGoodsCount(shoppingCartItem.getGoodsCount());
         return shoppingCartItemRepository.save(shoppingCartItemToSave);
     }
-
-    public String hello() {
-        return "hello, this is shopping cart service";
-    }
 }
