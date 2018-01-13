@@ -15,12 +15,20 @@ import org.springframework.web.context.WebApplicationContext
 @AutoConfigureStubRunner
 abstract class ContractBase {
 
+    private boolean initialized = false
+
     @Autowired
     private WebApplicationContext wac
 
     @Before
     void setup() {
         RestAssuredMockMvc.webAppContextSetup(wac)
+        if (!initialized) {
+            RestAssuredMockMvc.webAppContextSetup(wac)
+            initialized = true
+        } else {
+            RestAssuredMockMvc.reset()
+        }
         prepareData()
     }
 

@@ -22,8 +22,13 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getAllOrders(@RequestParam Long userId) {
-        return orderService.getAllOrders(userId);
+    public List<Order> getAllOrdersByUserId(@RequestParam Long userId) {
+        return orderService.getAllOrdersByUserId(userId);
+    }
+
+    @GetMapping("/all")
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
     }
 
 }

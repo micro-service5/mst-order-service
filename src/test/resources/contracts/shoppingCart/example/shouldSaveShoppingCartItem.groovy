@@ -21,7 +21,7 @@ Contract.make {
         body([
                 userId: 1234,
                 goodsId: 5678,
-                goodsCount: 5,
+                count: 5,
         ])
     }
 }
