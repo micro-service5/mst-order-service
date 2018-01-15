@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Start-Class: com.thoughtworks.mstorderservice.MstOrderServiceApplicati
+ on
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Version: 1.5.9.RELEASE
+Main-Class: org.springframework.boot.loader.JarLauncher
+

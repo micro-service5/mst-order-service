@@ -1,0 +1,7 @@
+CREATE TABLE `order` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `address` VARCHAR(255) NOT NULL,
+  `status` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);

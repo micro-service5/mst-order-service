@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="100">
+  <server artifactsdir="artifacts" agentAutoRegisterKey="dcdd26c3-8bb4-442f-ac25-bf39309da7ca" webhookSecret="c2d89613-459e-4096-a96b-4420f13aad6b" commandRepositoryLocation="default" serverId="09595f38-e99b-4586-bb9a-8cea0a3878ca" tokenGenerationKey="bfc2a7ca-106f-42b8-b2e0-840221763e00" />
+</cruise>
