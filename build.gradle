@@ -84,6 +84,10 @@ dependencies {
     testCompile("io.rest-assured:spring-mock-mvc:3.0.0")
 }
 
+junitPlatform {
+    enableStandardTestTask true
+}
+
 contracts {
     packageWithBaseClasses = "contracts"
 }
