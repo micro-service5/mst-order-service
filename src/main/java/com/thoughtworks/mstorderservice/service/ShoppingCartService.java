@@ -1,6 +1,7 @@
 package com.thoughtworks.mstorderservice.service;
 
 import com.thoughtworks.mstorderservice.Repository.ShoppingCartItemRepository;
+import com.thoughtworks.mstorderservice.clients.UserClient;
 import com.thoughtworks.mstorderservice.entity.ShoppingCartItem;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +13,14 @@ public class ShoppingCartService {
 
     private ShoppingCartItemRepository shoppingCartItemRepository;
 
-    ShoppingCartService(ShoppingCartItemRepository shoppingCartItemRepository) {
+    private UserClient userClient;
+
+    ShoppingCartService(
+            ShoppingCartItemRepository shoppingCartItemRepository,
+            UserClient userClient
+    ) {
         this.shoppingCartItemRepository = shoppingCartItemRepository;
+        this.userClient = userClient;
     }
 
     public List<ShoppingCartItem> getAll(Long userId) {
@@ -31,5 +38,9 @@ public class ShoppingCartService {
         ShoppingCartItem shoppingCartItemToSave = oldShoppingCartItem.orElse(shoppingCartItem);
         shoppingCartItemToSave.setGoodsCount(shoppingCartItem.getGoodsCount());
         return shoppingCartItemRepository.save(shoppingCartItemToSave);
+    }
+
+    public List<String> getNames() {
+        return userClient.getUserNames();
     }
 }

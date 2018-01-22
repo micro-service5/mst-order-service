@@ -40,4 +40,9 @@ public class ShoppingCartController {
                                 .goodsCount(goodsCount)
                                 .build()));
     }
+
+    @GetMapping("/user-names")
+    List<String> getNamesFromUser() {
+        return shoppingCartService.getNames();
+    }
 }
