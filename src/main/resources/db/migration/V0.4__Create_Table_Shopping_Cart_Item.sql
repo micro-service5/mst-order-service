@@ -1,4 +1,4 @@
-CREATE TABLE `shopping_cart_item` (
+CREATE TABLE `mst_shopping_cart_item` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `user_id` BIGINT(20) NOT NULL,
   `goods_id` BIGINT(20) NOT NULL,

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "shopping_cart_item")
+@Table(name = "mst_shopping_cart_item")
 public class ShoppingCartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

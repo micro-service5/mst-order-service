@@ -1,4 +1,4 @@
-CREATE TABLE `goods` (
+CREATE TABLE `mst_goods` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `order_id` BIGINT(20) NOT NULL,
   `goods_id` BIGINT(20) NOT NULL,
@@ -8,5 +8,5 @@ CREATE TABLE `goods` (
   `description` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_unique_order_id_goods_id` (`order_id`,`goods_id`),
-  CONSTRAINT `goods_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE
+  CONSTRAINT `goods_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `mst_order` (`id`) ON DELETE CASCADE
 );

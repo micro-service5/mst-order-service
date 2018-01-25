@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "mst_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
