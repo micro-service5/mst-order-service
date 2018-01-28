@@ -1,14 +1,16 @@
 package com.thoughtworks.mstorderservice.controller;
 
+import com.thoughtworks.mstorderservice.dto.OrderCreation;
 import com.thoughtworks.mstorderservice.entity.Order;
 import com.thoughtworks.mstorderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.POST;
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequestMapping("/order")
@@ -29,6 +31,12 @@ public class OrderController {
     @GetMapping("/all")
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
+    }
+
+    @PostMapping
+    @ResponseStatus(OK)
+    public Order createOrder(OrderCreation order) {
+        return orderService.createOrder(order);
     }
 
 }
